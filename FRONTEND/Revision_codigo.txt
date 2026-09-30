@@ -1,0 +1,83 @@
+RECOMENDACIONES PARA LA PAGINA
+
+Objetivo
+Presentar el trabajo independiente de cejas, pestanas y maquillaje, mostrar
+resultados reales y facilitar que una persona solicite una cita por WhatsApp.
+El enlace abre una conversacion; no confirma ni administra citas por si solo.
+
+Estado actual
+- Index.html tiene una bienvenida, una galeria de maquillaje y una de cejas y
+   pestanas. El nav ya enlaza a las secciones disponibles y Styles.css esta
+   conectado para alinear sus opciones.
+- "Contacto" aun es texto sin enlace. No hay telefono, precios, ubicacion,
+   horarios ni descripciones de servicios en el codigo actual.
+- Las imagenes no tienen texto alternativo (alt).
+- Las rutas de imagen mezclan /images/... e images/.... La carpeta images esta
+   junto a FRONTEND; hay que comprobar la ruta publica al decidir como desplegar
+   el sitio.
+
+Prioridad 1: facilitar las citas
+- Agregar un boton visible "Agendar por WhatsApp" en la bienvenida y otro en
+   la seccion de contacto. En movil, considerar un boton fijo, cuidando que no
+   tape contenido ni controles.
+- Usar el numero del negocio en formato internacional, solo digitos: codigo de
+   pais + numero, sin +, espacios, guiones ni parentesis.
+- Preparar un mensaje inicial que ayude a organizar la consulta. Por ejemplo,
+   puede pedir servicio de interes, dia y horario preferidos. La clienta debe
+   poder revisar y enviar el mensaje; el enlace no agenda automaticamente.
+- Reemplazar TU_NUMERO_CON_CODIGO_DE_PAIS por el numero real antes de publicar.
+
+Ejemplo de enlace HTML:
+
+<a href="https://wa.me/TU_NUMERO_CON_CODIGO_DE_PAIS?text=Hola%2C%20quiero%20consultar%20por%20una%20cita"
+    target="_blank" rel="noopener noreferrer">
+      Agendar por WhatsApp
+</a>
+
+Prioridad 2: contenido que ayuda a elegir
+- Crear una seccion "Servicios" con una descripcion breve por servicio, que
+   incluya que se realiza, duracion aproximada y precio o "desde" si se desea.
+   Publicar solo precios y tiempos confirmados.
+- Separar los servicios de maquillaje, cejas y pestanas para que cada uno tenga
+   su propio titulo y destino de navegacion. Actualizar los href del nav para que
+   apunten a ids existentes, unicos y sin espacios.
+- Mostrar trabajos propios en la galeria; usar fotos nitidas, consistentes y
+   con permiso de las personas fotografiadas. Si es posible, comprimirlas en
+   WebP o AVIF sin perder detalle visible.
+- Agregar una breve presentacion profesional: experiencia, zona de atencion y
+   que hace diferente el servicio, sin publicar datos personales innecesarios.
+- Incluir horarios, zona o direccion de atencion y politicas de reserva,
+   cancelacion, demora y medios de pago. Publicar una direccion exacta solo si
+   es apropiado para el negocio.
+- Los testimonios pueden aportar confianza; publicarlos con permiso y sin
+   atribuir opiniones inventadas.
+
+Prioridad 3: calidad y accesibilidad
+- Agregar un h1 descriptivo para la pagina y mantener una jerarquia ordenada de
+   encabezados: h1 para el tema principal, h2 para secciones y h3 para subsecciones.
+- Escribir alt breve y especifico para cada foto de trabajo. Usar alt="" solo
+   para imagenes puramente decorativas.
+- Definir una sola estrategia de rutas de imagen segun la carpeta que se
+   publique como raiz del sitio. Probar cada imagen tanto localmente como en el
+   sitio publicado; algunos servidores distinguen mayusculas y minusculas.
+- Comprobar que el layout, la galeria y los botones funcionan en celular, que
+   el texto tenga buen contraste y que los enlaces puedan usarse con teclado.
+- Cargar de forma diferida las fotos de galeria que quedan fuera de pantalla
+   (loading="lazy") y reservar sus dimensiones para evitar saltos al cargar.
+- Agregar un titulo de pagina mas descriptivo, una meta description y un favicon
+   antes de publicar. Revisar tambien la vista previa al compartir el enlace.
+
+Estructura sugerida
+Inicio / bienvenida con llamada a agendar
+Servicios de cejas, pestanas y maquillaje
+Galeria de trabajos
+Sobre Pauli
+Informacion de atencion y politicas
+Contacto con enlace a WhatsApp
+
+Datos que faltan para completar el sitio
+- Numero de WhatsApp con codigo de pais.
+- Lista final de servicios, descripciones, duraciones y precios, si se mostraran.
+- Horarios y zona de atencion; direccion solo si corresponde.
+- Texto de bienvenida y datos que Pauli quiera publicar.
+- Fotos definitivas y permiso para mostrarlas.

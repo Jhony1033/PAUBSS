@@ -1,0 +1,552 @@
+:root {
+	color-scheme: light;
+	--ink: #f7f2f8;
+	--forest: #c870e8;
+	--coral: #e0a8f0;
+	--lime: #dce7b1;
+	--paper: #000000;
+	--white: #1c181e;
+	--muted: #c5bac9;
+	--page-width: 1160px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 1rem;
+}
+
+body {
+	margin: 0;
+	color: var(--ink);
+	background: var(--paper);
+	font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+	line-height: 1.6;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+a {
+	color: inherit;
+}
+
+a:focus-visible {
+	outline: 3px solid var(--coral);
+	outline-offset: 4px;
+}
+
+.page-width {
+	width: min(100% - 3rem, var(--page-width));
+	margin-inline: auto;
+}
+
+.skip-link {
+	position: absolute;
+	z-index: 10;
+	top: 0.75rem;
+	left: 0.75rem;
+	padding: 0.65rem 1rem;
+	color: var(--white);
+	background: var(--forest);
+	transform: translateY(-160%);
+}
+
+.skip-link:focus {
+	transform: translateY(0);
+}
+
+.site-header {
+	display: flex;
+	min-height: 92px;
+	align-items: center;
+	justify-content: space-between;
+	gap: 2rem;
+	width: min(100% - 3rem, var(--page-width));
+	margin-inline: auto;
+	border-bottom: 1px solid #38323a;
+}
+
+.brand {
+	flex: 0 0 auto;
+}
+
+.brand img {
+	width: 122px;
+	height: auto;
+}
+
+.main-nav {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 1.6rem;
+	flex-wrap: wrap;
+}
+
+.main-nav a,
+.site-footer a {
+	text-decoration: none;
+}
+
+.main-nav a {
+	padding-block: 0.5rem;
+	color: var(--forest);
+	font-size: 0.9rem;
+	font-weight: 700;
+}
+
+.main-nav a:hover,
+.site-footer a:hover {
+	color: var(--coral);
+}
+
+.hero {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(280px, 0.88fr);
+	align-items: center;
+	gap: clamp(2rem, 6vw, 5.5rem);
+	padding-block: 4.5rem 5rem;
+}
+
+.eyebrow {
+	margin: 0 0 0.8rem;
+	color: var(--coral);
+	font-size: 0.77rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.hero h1,
+.section-heading h2,
+.about h2,
+.contact h2 {
+	margin: 0;
+	font-family: Georgia, "Times New Roman", serif;
+	font-weight: 400;
+	line-height: 1.08;
+}
+
+.hero h1 {
+	max-width: 12ch;
+	font-size: 3.6rem;
+}
+
+.hero-description {
+	max-width: 39rem;
+	margin: 1.4rem 0 1.6rem;
+	color: var(--muted);
+	font-size: 1.08rem;
+}
+
+.button {
+	display: inline-flex;
+	min-height: 48px;
+	align-items: center;
+	justify-content: center;
+	gap: 0.7rem;
+	padding: 0.75rem 1.25rem;
+	border: 0;
+	border-radius: 4px;
+	font-weight: 700;
+	text-decoration: none;
+	transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.button:hover {
+	transform: translateY(-2px);
+}
+
+.button-primary {
+	color: var(--white);
+	background: #6b347b;
+}
+
+.button-primary:hover {
+	background: #562b64;
+}
+
+.hero-note {
+	margin: 0.9rem 0 0;
+	color: var(--muted);
+	font-size: 0.85rem;
+}
+
+.hero-image {
+	margin: 0;
+}
+
+.hero-image img {
+	width: 100%;
+	aspect-ratio: 4 / 5;
+	object-fit: cover;
+	object-position: center;
+}
+
+.hero-image figcaption {
+	padding-top: 0.65rem;
+	color: var(--muted);
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 0.95rem;
+	font-style: italic;
+}
+
+.section-band {
+	background: #141115;
+}
+
+.services,
+.gallery {
+	padding-block: 5rem;
+}
+
+.section-heading {
+	max-width: 650px;
+	margin-bottom: 2.4rem;
+}
+
+.section-heading h2,
+.about h2,
+.contact h2 {
+	font-size: 2.6rem;
+}
+
+.section-heading > p:last-child {
+	margin: 0.8rem 0 0;
+	color: var(--muted);
+}
+
+.service-list {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1rem;
+}
+
+.service-item {
+	min-height: 250px;
+	padding: 1.5rem;
+	border-top: 3px solid var(--coral);
+	background: var(--white);
+}
+
+.service-number {
+	color: var(--coral);
+	font-size: 0.8rem;
+	font-weight: 700;
+}
+
+.service-item h3,
+.gallery-group h3 {
+	margin: 0.7rem 0 0.45rem;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 1.55rem;
+	font-weight: 400;
+}
+
+.service-item p {
+	min-height: 3.2em;
+	margin: 0 0 1.2rem;
+	color: var(--muted);
+}
+
+.service-item a,
+.text-link {
+	color: var(--forest);
+	font-size: 0.92rem;
+	font-weight: 700;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 4px;
+}
+
+.service-item a:hover,
+.text-link:hover {
+	color: var(--coral);
+}
+
+.service-note {
+	margin: 1rem 0 0;
+	color: var(--muted);
+	font-size: 0.88rem;
+}
+
+.gallery-group + .gallery-group {
+	margin-top: 3rem;
+}
+
+.gallery-group h3 {
+	margin: 0 0 1rem;
+}
+
+.gallery-grid {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 1rem;
+}
+
+.gallery-grid figure {
+	min-width: 0;
+	margin: 0;
+}
+
+.gallery-grid img {
+	width: 100%;
+	aspect-ratio: 4 / 5;
+	object-fit: cover;
+	background: var(--lime);
+}
+
+.gallery-grid figcaption {
+	padding-top: 0.55rem;
+	color: var(--muted);
+	font-size: 0.85rem;
+}
+
+.about {
+	padding-block: 4.5rem;
+}
+
+.about-content {
+	max-width: 760px;
+}
+
+.about-content > p:not(.eyebrow) {
+	max-width: 620px;
+	margin: 1rem 0 1.2rem;
+	color: var(--muted);
+	font-size: 1.05rem;
+}
+
+.contact {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 2rem;
+	padding-block: 4.5rem;
+}
+
+.contact > div {
+	max-width: 620px;
+}
+
+.contact > div > p:last-child {
+	margin: 1rem 0 0;
+	color: var(--muted);
+}
+
+.booking-actions {
+	width: min(100%, 430px);
+	flex: 0 1 430px;
+}
+
+.appointment-form[hidden] {
+	display: none;
+}
+
+.appointment-form {
+	display: grid;
+	gap: 0.7rem;
+}
+
+.appointment-form label {
+	font-size: 0.9rem;
+	font-weight: 700;
+}
+
+.appointment-form select,
+.appointment-form input {
+	width: 100%;
+	min-height: 46px;
+	padding: 0.65rem 0.75rem;
+	border: 1px solid #5c5260;
+	border-radius: 4px;
+	color: var(--ink);
+	background: #1c181e;
+	font: inherit;
+}
+
+.appointment-form select:focus-visible,
+.appointment-form input:focus-visible {
+	outline: 3px solid var(--coral);
+	outline-offset: 2px;
+}
+
+.appointment-fields {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.75rem;
+}
+
+.appointment-fields > div {
+	display: grid;
+	gap: 0.35rem;
+}
+
+.form-hint,
+.form-feedback {
+	margin: 0;
+	color: var(--muted);
+	font-size: 0.82rem;
+}
+
+.appointment-form .button {
+	width: 100%;
+	cursor: pointer;
+}
+
+.direct-whatsapp {
+	display: inline-block;
+	margin-top: 0.85rem;
+	color: var(--forest);
+	font-size: 0.9rem;
+	font-weight: 700;
+	text-underline-offset: 4px;
+}
+
+.button-whatsapp {
+	flex: 0 0 auto;
+	color: var(--ink);
+	background: var(--lime);
+}
+
+.button-whatsapp:hover {
+	background: #cfdda0;
+}
+
+.site-footer {
+	color: var(--white);
+	background: #171219;
+}
+
+.footer-content {
+	display: flex;
+	min-height: 76px;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+.footer-content p {
+	margin: 0;
+	color: #ded5e2;
+	font-size: 0.86rem;
+}
+
+.footer-content a {
+	font-weight: 700;
+}
+
+@media (max-width: 760px) {
+	.site-header {
+		min-height: 0;
+		flex-wrap: wrap;
+		gap: 0.5rem 1rem;
+		padding-block: 0.8rem;
+	}
+
+	.brand img {
+		width: 96px;
+	}
+
+	.main-nav {
+		justify-content: flex-start;
+		gap: 0.35rem 1rem;
+		width: 100%;
+	}
+
+	.hero {
+		grid-template-columns: 1fr;
+		gap: 2rem;
+		padding-block: 3rem;
+	}
+
+	.hero h1 {
+		max-width: 14ch;
+		font-size: 3rem;
+	}
+
+	.hero-image {
+		max-width: 560px;
+	}
+
+	.services,
+	.gallery {
+		padding-block: 3.5rem;
+	}
+
+	.service-list {
+		grid-template-columns: 1fr;
+	}
+
+	.service-item {
+		min-height: 0;
+	}
+
+	.service-item p {
+		min-height: 0;
+	}
+
+	.gallery-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1.25rem 0.75rem;
+	}
+
+	.contact {
+		align-items: flex-start;
+		flex-direction: column;
+		padding-block: 3.5rem;
+	}
+
+	.booking-actions {
+		flex-basis: auto;
+	}
+}
+
+@media (max-width: 420px) {
+	.page-width,
+	.site-header {
+		width: min(100% - 2rem, var(--page-width));
+	}
+
+	.main-nav {
+		gap: 0.25rem 0.8rem;
+	}
+
+	.main-nav a {
+		font-size: 0.84rem;
+	}
+
+	.hero h1 {
+		font-size: 2.5rem;
+	}
+
+	.section-heading h2,
+	.about h2,
+	.contact h2 {
+		font-size: 2.2rem;
+	}
+
+	.footer-content {
+		align-items: flex-start;
+		flex-direction: column;
+		justify-content: center;
+		padding-block: 1rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		transition-duration: 0.01ms !important;
+	}
+}
